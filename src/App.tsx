@@ -19,8 +19,8 @@ export default function App() {
           </h1>
         </div>
         <p className="text-sm text-zinc-500 max-w-md text-center">
-          Paste a GitHub skill URL to run a security audit powered by AI.
-          Checks metadata, permissions, content red flags, and typosquat risks.
+          粘贴 GitHub 技能 URL，由 AI 驱动安全审计。
+          检查元数据、权限、内容危险信号和仿冒风险。
         </p>
       </div>
 
@@ -38,7 +38,7 @@ export default function App() {
           onClick={reset}
           className="mt-6 text-xs text-zinc-500 hover:text-zinc-300 transition-colors"
         >
-          Scan another skill
+          扫描其他技能
         </button>
       )}
     </div>

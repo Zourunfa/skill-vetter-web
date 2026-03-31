@@ -43,7 +43,7 @@ export function VettingReport({ report, status, error, steps }: VettingReportPro
   if (error) {
     return (
       <div className="mx-auto max-w-2xl w-full rounded-lg border border-red-800/50 bg-red-950/30 p-6">
-        <h3 className="text-red-400 font-semibold mb-1">Vetting Failed</h3>
+        <h3 className="text-red-400 font-semibold mb-1">审计失败</h3>
         <p className="text-sm text-red-300/80">{error}</p>
         {steps.length > 0 && (
           <div className="mt-4 border-t border-red-800/30 pt-3 space-y-1">
@@ -68,7 +68,7 @@ export function VettingReport({ report, status, error, steps }: VettingReportPro
       {/* Header */}
       <div className="flex items-center justify-between border-b border-zinc-800 px-6 py-4">
         <h2 className="text-sm font-semibold text-zinc-300 tracking-wide uppercase">
-          Vetting Report
+          审计报告
         </h2>
         <div className="flex items-center gap-3">
           {/* Language toggle */}
@@ -84,14 +84,14 @@ export function VettingReport({ report, status, error, steps }: VettingReportPro
                 ) : (
                   <Languages className="h-3.5 w-3.5" />
                 )}
-                {isTranslating ? 'Translating...' : showTranslated ? 'English' : '中文'}
+                {isTranslating ? '翻译中...' : showTranslated ? '中文' : 'English'}
               </button>
               {showTranslated && (
                 <button
                   onClick={handleResetTranslation}
                   className="text-xs text-zinc-600 hover:text-zinc-400 transition-colors"
                 >
-                  Reset
+                  重置
                 </button>
               )}
             </div>
@@ -112,7 +112,7 @@ export function VettingReport({ report, status, error, steps }: VettingReportPro
             ))}
             <div className="flex items-center gap-2 text-sm text-zinc-500">
               <div className="h-3.5 w-3.5 animate-spin rounded-full border-2 border-zinc-600 border-t-zinc-300" />
-              <span>Working...</span>
+              <span>正在分析...</span>
             </div>
           </div>
         ) : displayText ? (
@@ -127,7 +127,7 @@ export function VettingReport({ report, status, error, steps }: VettingReportPro
         ) : null}
 
         {translateError && (
-          <p className="mt-3 text-xs text-red-400">Translation failed: {translateError}</p>
+          <p className="mt-3 text-xs text-red-400">翻译失败: {translateError}</p>
         )}
       </div>
     </div>

@@ -16,11 +16,11 @@ export function UrlInput({ onSubmit, isLoading }: UrlInputProps) {
     e.preventDefault();
     const trimmed = url.trim();
     if (!trimmed) {
-      setValidationError('Please enter a GitHub URL');
+      setValidationError('请输入 GitHub URL');
       return;
     }
     if (!GITHUB_URL_REGEX.test(trimmed)) {
-      setValidationError('Invalid URL format. Use: https://github.com/{owner}/{repo} or https://github.com/{owner}/{repo}/tree/{branch}/{path}');
+      setValidationError('URL 格式无效。请使用: https://github.com/{owner}/{repo} 或 https://github.com/{owner}/{repo}/tree/{branch}/{path}');
       return;
     }
     setValidationError('');
@@ -53,7 +53,7 @@ export function UrlInput({ onSubmit, isLoading }: UrlInputProps) {
           ) : (
             <Shield className="h-4 w-4" />
           )}
-          {isLoading ? 'Scanning...' : 'Vet Skill'}
+          {isLoading ? '扫描中...' : '安全审计'}
         </button>
       </div>
       {validationError && (

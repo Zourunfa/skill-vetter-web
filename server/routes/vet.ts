@@ -82,7 +82,7 @@ vetRouter.post('/translate', async (req, res) => {
   startSSE(res);
 
   const systemPrompt =
-    'You are a professional technical translator. Translate the following English text into Chinese (Simplified). ' +
+    'You are a professional technical translator. Translate the following Chinese text into English. ' +
     'Preserve all Markdown formatting (headers, bold, lists, tables, code blocks, etc.) exactly as-is. ' +
     'Only translate natural language text. Do not translate code, file paths, URLs, or technical identifiers. ' +
     'Output only the translated text, no explanations.';
